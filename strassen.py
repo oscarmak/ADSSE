@@ -1,11 +1,14 @@
 import numpy as np
-import time
 import tracemalloc
+import time
+
+
+
 
 # creates random matrix of size n x n
 def random_matrices(n):
-    m1 = np.random.randint(11, size=(n, n))
-    m2 = np.random.randint(11, size=(n, n))
+    m1 = np.random.randint(10, size=(n, n))
+    m2 = np.random.randint(10, size=(n, n))
     return m1, m2
 
 
@@ -90,8 +93,7 @@ end = time.time()
 current, peak = tracemalloc.get_traced_memory()
 tracemalloc.stop()
 
-
-print(f'Strassen:\n{result}')
+#print(f'Strassen:\n{result}')
 print(f"Current memory usage is {current / 10**6}MB; Peak was {peak / 10**6}MB")
 print(f"Runtime of the program is {end - start} seconds")
 

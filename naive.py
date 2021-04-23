@@ -5,8 +5,8 @@ import time
 #input matrix size n x n
 n = int(input('enter matrix size'))
 
-a = np.random.randint(11, size=(n,n))
-b = np.random.randint(11, size=(n,n))
+a = np.random.randint(10, size=(n,n))
+b = np.random.randint(10, size=(n,n))
 
 def new_m(p, q): # create a matrix filled with 0s
     matrix = [[0 for row in range(p)] for col in range(q)]
@@ -35,6 +35,6 @@ tracemalloc.stop()
 
 
 
-print (f'Naive:\n{result}')
+#print (f'Naive:\n{result}')
 print(f"Current memory usage is {current / 10**6}MB; Peak was {peak / 10**6}MB")
 print(f"Runtime of the program is {end - start} seconds")
