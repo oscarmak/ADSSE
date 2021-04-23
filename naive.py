@@ -3,7 +3,7 @@ import tracemalloc
 import time
 
 #input matrix size n x n
-n = int(input('enter matrix size'))
+n = 512
 
 a = np.random.randint(10, size=(n,n))
 b = np.random.randint(10, size=(n,n))

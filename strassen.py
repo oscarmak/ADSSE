@@ -80,10 +80,11 @@ def strassen_multiply(m1, m2):
 
 
 # n = matrix size
-n = int(input('enter matrix size'))
+n = 1024
 m1, m2 = random_matrices(n)
 
 #timing
+
 tracemalloc.start()
 start = time.time()
 
@@ -96,4 +97,3 @@ tracemalloc.stop()
 #print(f'Strassen:\n{result}')
 print(f"Current memory usage is {current / 10**6}MB; Peak was {peak / 10**6}MB")
 print(f"Runtime of the program is {end - start} seconds")
-
