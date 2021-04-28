@@ -1,9 +1,9 @@
 from math import ceil, log
 import time
-import random
 import numpy as np
-from statistics import mean, pstdev
+from statistics import mean
 import tracemalloc
+
 
 def add(A, B):
     A = np.asarray(A)
@@ -95,9 +95,9 @@ def strassen(A, B):
     return strassenR(A, B)
 
 
-print("\n\n****************************STRASSEN****************************\n\n")
+print("\n\nStrassen\n\n")
 
-for i in [16, 32, 64, 128, 256, 512, 1024]:
+for i in [16,32,64,128,256,512,1024,2048]:
     matrix1 = normalizeMatrix(randomMatrix(i))
     matrix2 = normalizeMatrix(randomMatrix(i))
 
@@ -117,23 +117,22 @@ for i in [16, 32, 64, 128, 256, 512, 1024]:
         tracemalloc.stop()
 
     print("size: ", i)
-    #print("times: ", results)
+
     Average = mean(results)
-    #Deviation = pstdev(results)
+
     print("average: ", Average, "seconds")
-    print(f"Current memory usage is {current / 10 ** 6}MB; Peak was {peak / 10 ** 6}MB")
-    #print("dev: ", Deviation, "seconds")
-    print("***************************************************")
+    print(f"Peak was {peak / 10 ** 6}MB")
+    print("---")
 
-print("\n\n****************************CLASSIC****************************\n\n")
+print("\n\nNaive\n\n")
 
-for i in [16, 32, 64, 128, 256, 512, 1024]:
+for i in [16,32,64,128,256,512,1024,2048]:
     matrix1 = normalizeMatrix(randomMatrix(i))
     matrix2 = normalizeMatrix(randomMatrix(i))
 
     results = []
 
-    repetitions = 5
+    repetitions = 3
 
 
     for _ in range(repetitions):
@@ -147,10 +146,9 @@ for i in [16, 32, 64, 128, 256, 512, 1024]:
         tracemalloc.stop()
 
     print("size: ", i)
-    #print("times: ", results)
+
     Average = mean(results)
-    #Deviation = pstdev(results)
+
     print("average: ", Average, "seconds")
-    print(f"Current memory usage is {current / 10 ** 6}MB; Peak was {peak / 10 ** 6}MB")
-    #print("dev: ", Deviation, "seconds")
-    print("***************************************************")
+    print(f"Peak was {peak / 10 ** 6}MB")
+    print("---")
